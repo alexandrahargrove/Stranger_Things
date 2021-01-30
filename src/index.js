@@ -7,12 +7,15 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import {
     Accountform,
+    GetPosts,
+    CreatePostForm,
   } from './components';
 
 
 const App = () => {
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
+    // const [posts, setPosts] = useState({post: {}, []});
 
 
 return <>
@@ -26,6 +29,8 @@ return <>
         <Route path="/register">
         <Accountform type={'register'} setToken={setToken} setUser={setUser}/>
         </Route>
+        <GetPosts />
+        <CreatePostForm />
 
     </> 
 
