@@ -23,7 +23,12 @@ const Accountform = ({type, setToken, setUser}) => {
                 password
             }
         })
-    });
+    })
+    
+    ;
+
+
+
     const {data} = await response.json(); 
     console.log({data})
     const token = data?.token;
@@ -52,7 +57,10 @@ const Accountform = ({type, setToken, setUser}) => {
             <input type="password" value={password} onChange={(ev) => setPassword(ev.target.value)} placeholder="password" required></input>
             <button type="submit">{formtitle}</button>
         </form>
-        <Link to={`/${oppositeType}`}>{oppositeTitle}</Link>
+        <p> <Link to={`/${oppositeType}`}> {
+            oppositeType === 'login' ? 'Already have an account?' : `Don't have an account?`
+    } {oppositeTitle} here. </Link></p>
+    
         </>
 }
 
