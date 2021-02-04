@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {useReducer, useState} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 
 
 import {
     Accountform,
     GetPosts,
-    CreatePostForm,
-    // Home
+    CreatePostForm
   } from './components';
 
 
@@ -21,9 +21,16 @@ const App = () => {
 return <>
 
 <header>
-<h1>Strangers Things</h1>
 <nav id="navigation">
-    <Link to="/">Home</Link> | <Link to="/posts">Posts</Link> | <Link to="/login">Login</Link>
+<h1>Strangers Things</h1>
+    <Link to="/">Home</Link> | <Link to="/posts">Posts</Link> | <Link onClick={() => {
+       if (token) {
+       setToken('')
+        setUser({})
+       }
+    }} to="/login">{
+    token ? 'Logout' : 'Login'}  
+    </Link>
 </nav>
 </header>
 
@@ -44,7 +51,8 @@ return <>
         <Accountform type={'register'} setToken={setToken} setUser={setUser}/>
         </Route>
         <Route path="/posts">
-        <GetPosts token={token}/>
+        {token ? <Link to="/new-post">Add Post</Link> : ''}
+        <GetPosts token={token} setUser={setUser}/>
         </Route> 
         <Route path="/new-post">
         <CreatePostForm token={token} setUser={setUser}/>

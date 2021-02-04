@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 const Accountform = ({type, setToken, setUser}) => {
     const [username, setUsername] = useState('');
@@ -52,15 +53,18 @@ const Accountform = ({type, setToken, setUser}) => {
 
     return <>
         <h2>{formtitle}</h2>
+        <div className="login-form" >
         <form onSubmit={submitClick}>
             <input type="text" value={username} onChange={(ev) => setUsername(ev.target.value)} placeholder="username" required></input>
+            <br />
             <input type="password" value={password} onChange={(ev) => setPassword(ev.target.value)} placeholder="password" required></input>
+            <br />
             <button type="submit">{formtitle}</button>
         </form>
         <p> <Link to={`/${oppositeType}`}> {
             oppositeType === 'login' ? 'Already have an account?' : `Don't have an account?`
     } {oppositeTitle} here. </Link></p>
-    
+    </div>
         </>
 }
 

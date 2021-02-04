@@ -7,7 +7,7 @@ const CreatePostForm = ({token}) => {
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
     const [location, setLocation] = useState('')
-    // const [willDeliver, setWillDeliver] = useState()
+    const [willDeliver, setWillDeliver] = useState(false)
 
     const addPost = async (event) => {
         event.preventDefault();
@@ -25,7 +25,7 @@ const CreatePostForm = ({token}) => {
                         description,
                         price,
                         location,
-                        // willDeliver: true
+                        willDeliver: willDeliver
                     }
                 })
         });
@@ -36,6 +36,7 @@ const CreatePostForm = ({token}) => {
         setDescription('');
         setPrice('');
         setLocation('');
+        willDeliver(false)
     }
 
 
@@ -51,7 +52,9 @@ return <>
     <input type="text" value={location} onChange={(ev) => setLocation(ev.target.value)} placeholder="location"></input>
     <br />
     Willing to deliver?
-    <input type="checkbox" id="delivery"></input>
+    <input type="checkbox" value={willDeliver} onChange={(event) => {
+        setWillDeliver(event.target.value)
+    }}id="delivery"></input>
     <br />
     <button type="submit">Create Post</button>
 </form>
