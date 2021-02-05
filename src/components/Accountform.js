@@ -52,8 +52,8 @@ const Accountform = ({type, setToken, setUser}) => {
 
 
     return <>
-        <h2>{formtitle}</h2>
         <div className="login-form" >
+        <h2 className="account-form-title">{formtitle}</h2>
         <form onSubmit={submitClick}>
             <input type="text" value={username} onChange={(ev) => setUsername(ev.target.value)} placeholder="username" required></input>
             <br />
@@ -61,7 +61,7 @@ const Accountform = ({type, setToken, setUser}) => {
             <br />
             <button type="submit">{formtitle}</button>
         </form>
-        <p> <Link to={`/${oppositeType}`}> {
+        <p> <Link id="register-or-login"to={`/${oppositeType}`}> {
             oppositeType === 'login' ? 'Already have an account?' : `Don't have an account?`
     } {oppositeTitle} here. </Link></p>
     </div>

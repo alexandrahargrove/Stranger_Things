@@ -1,13 +1,82 @@
-nav {
+body {
+    background-color: rgb(230, 230, 230)
+    /* background-color: black; */
+}
+
+/* #header {
     background-color: black;
+    margin-top: -1.5em;
+    margin-bottom: 0em;
+}
+#navigation {
     color: white;
-}
 
-nav a {
+} */
+
+.account-form-title {
+    background-color: black;
+    text-align: left;
+    height: 40px;
     color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;;
+
+    
+}
+
+.login-form {
+    text-align: center;
+    height: 350px;
+    width: 500px;
+    display: block;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 70px;
+}
+
+.login-form button {
+    font-size: 16px;
+    padding: 10px;
+    /* background-color: black; */
+    border-radius: 2em;
+    border: black 2px solid;
+    width: 100px;
+
 }
 
 
-.post {
-    border: solid 1px black;
+.login-form button:hover {
+color: grey;
+transition-duration: 0.4s;
 }
+
+.login-form input {
+    min-width: 275px;
+    min-height: 30px;
+    margin: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+
+
+.login-form input::placeholder{
+    color: rgba(128, 128, 128, 0.226);
+}
+
+#register-or-login {
+    color: black;
+    font-style: bold;
+}
+
+#register-or-login:hover {
+color: grey;
+font-style: italic;
+
+}
+/* LOGIN FORM ^ */
