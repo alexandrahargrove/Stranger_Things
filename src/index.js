@@ -10,7 +10,8 @@ import {
     Accountform,
     GetPosts,
     CreatePostForm,
-    Profile
+    Profile,
+    MessagesForProfile
   } from './components';
 
 
@@ -63,6 +64,7 @@ return <>
         <Route path="/profile">
         <Profile setUser={setUser} token={token} />
         </Route>
+        <MessagesForProfile setUser={setUser} token={token}/> 
     </> 
 
 

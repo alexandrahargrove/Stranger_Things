@@ -13,11 +13,10 @@ const Profile = ({token, setUser}) => {
             'Authorization': `Bearer ${token}`
              }
          })
-        //  const {data} = await reponse.json()
-        //  console.log(data)
         const data = await reponse.json()
         console.log(data.data.posts)
         setPosts(data.data.posts);
+        setUser(data.data.posts);
     }, [])
 
     return (<>
@@ -34,7 +33,6 @@ const Profile = ({token, setUser}) => {
                         <p>Location: {location}</p>
                         <p>Description: {description}</p>
                         <p>Created At: {createdAt}</p>
-                        {/* <p>Seller: {author.username}</p> */}
                         {
     
                             isAuthor === true ? <div><button>EDIT</button><button>DELETE</button></div> : ''
@@ -50,5 +48,12 @@ const Profile = ({token, setUser}) => {
     
     
     }
+
+
+
+
+
+
+        
 
 export default Profile;

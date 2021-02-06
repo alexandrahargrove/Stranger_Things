@@ -9,6 +9,7 @@ const Accountform = ({type, setToken, setUser}) => {
     const formtitle = type === 'login' ? 'Login' : 'Register';
     const oppositeTitle = type === 'login' ? 'Register' : 'Login';
     const oppositeType = type === 'login' ? 'register' : 'login';
+    const history = useHistory();
 
     const submitClick = async (event) => {
         console.log('clicked')
@@ -27,9 +28,6 @@ const Accountform = ({type, setToken, setUser}) => {
     })
     
     ;
-
-
-
     const {data} = await response.json(); 
     console.log({data})
     const token = data?.token;
@@ -44,9 +42,12 @@ const Accountform = ({type, setToken, setUser}) => {
         const {data} = await reponse.json();
         console.log(data);
         setUser(data);
+        setUsername('');
+        setPassword('');
+        history.push('/profile')
     }
-    setUsername('');
-    setPassword('');
+    // setUsername('');
+    // setPassword('');
     }
 
 

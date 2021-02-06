@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: rgb(230, 230, 230)
     /* background-color: black; */
@@ -80,3 +83,18 @@ font-style: italic;
 
 }
 /* LOGIN FORM ^ */
+
+/* .post {
+    background-color: white;
+    height: 400px;
+    /* width: 400px; */
+    /* grid
+ 
+} */
+
+/* .post-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+} */

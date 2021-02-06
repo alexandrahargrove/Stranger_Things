@@ -36,7 +36,7 @@ const CreatePostForm = ({token}) => {
         setDescription('');
         setPrice('');
         setLocation('');
-        willDeliver(false)
+        setWillDeliver(false)
     }
 
 
