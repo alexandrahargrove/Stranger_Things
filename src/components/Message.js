@@ -25,11 +25,12 @@ setMessage('');
 }
 
 return <>
-<form onSubmit={onSubmit}>
-<input type="text" value={message} onChange={(event) => {
+<form onSubmit={onSubmit} id="send-message-form">
+<textarea id="text" value={message} onChange={(event) => {
     setMessage(event.target.value);
-}} placeholder="Type message here"></input>
-<button type="submit">SEND MESSAGE</button>
+}} placeholder="Type message to seller here"></textarea>
+<br />
+<button type="submit" id="send-message-button"> SEND MESSAGE</button>
 </form>
 </>
 

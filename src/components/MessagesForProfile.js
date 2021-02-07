@@ -3,31 +3,25 @@ import {React, useState, useEffect} from 'react';
 
 
 
-const MessagesForProfile = ({token, setUser}) => {
-    const [myMessages, setMyMessages] = useState([])
-    useEffect (async () => {
-        const reponse = await fetch('https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/me', {
-         method: 'GET',
-         headers: {
-        'Content-Type':'application/json',
-        'Authorization': `Bearer ${token}`
-         }
-     })
-     const data = await reponse.json()
-     console.log(data.data.messages);
-     setMyMessages(data.data.messages)
-     setUser(data.data.username)
-    }, [token])
+const MessagesForProfile = ({token, user}) => {
+    const [myMessages, setMyMessages] = useState(user.messages ? user.messages : [])
 
     return (<>
-    <h1>Messages:</h1>
     {
         myMessages.map((message, index) => {
-            return (
-            <div key={index}>
-            <h1>{message.content}</h1>
+            console.log(message)
+            return message.fromUser.username === user.username ? (
+            <div className='messages-from-me' key={index}>
+            <h1>{message.post.title}</h1>
+            <p>{message.content}</p>
+            <p>{message.fromUser.username}</p>
             </div>
-            )
+            ) :
+            <div className='messages-to-me' key={index}>
+            <h1>{message.post.title}</h1>
+            <p>{message.content}</p>
+            <p>From: {message.fromUser.username}</p>
+            </div>
         })
     }
     </>)

@@ -22,11 +22,11 @@ const App = () => {
 
 return <>
 
-<header id="header">
+<header>
 <nav id="navigation">
 <h1>Strangers Things</h1>
-    <Link to="/">Home</Link> <Link to="/posts">Posts</Link> {
-       token ?  <Link to="/profile">Profile</Link> : ''
+    <Link to="/">Home</Link> <Link to="/posts"> Posts</Link> {
+       token ?  <Link to="/profile"> Profile</Link> : ''
     } <Link onClick={() => {
        if (token) {
        setToken('')
@@ -55,16 +55,15 @@ return <>
         <Accountform type={'register'} setToken={setToken} setUser={setUser}/>
         </Route>
         <Route path="/posts">
-        {token ? <Link to="/new-post">Add Post</Link> : ''}
+        {/* {token ? <Link id="add-post" to="/new-post">Add Post</Link> : ''} */}
         <GetPosts token={token} setUser={setUser}/>
         </Route> 
         <Route path="/new-post">
         <CreatePostForm token={token} setUser={setUser}/>
         </Route>
         <Route path="/profile">
-        <Profile setUser={setUser} token={token} />
+        <Profile user={user} token={token} setUser={setUser} />
         </Route>
-        <MessagesForProfile setUser={setUser} token={token}/> 
     </> 
 
 

@@ -20,20 +20,33 @@ const GetPosts = ({token, setUser}) => {
     }, [])
 
     return (<>
-    <h1>Posts</h1>
+    <h1 id="post-header">POSTS
+    {       token ? <Link id="add-post" to="/new-post">(ADD POST)</Link> : ''
+} </h1>
+
 
     {
         listOfPosts.map(post => {
-            const {title, price, location, description, createdAt, _id, author, isAuthor} = post;
+            const {title, price, location, description, createdAt, _id, author, isAuthor, willDeliver} = post;
+            console.log(post)
+            console.log(willDeliver);
             return (
                 <div key={_id} className='post-container'>
                     <div className='post'>
-                    <h3>Title: {title}</h3>
-                    <p>Price: {price}</p>
-                    <p>Location: {location}</p>
-                    <p>Description: {description}</p>
-                    <p>Created At: {createdAt}</p>
-                    <p>Seller: {author.username}</p>
+                    <h3 id="post-title">{title}</h3>
+                    <br />
+                    <p><b>Price:</b> {price}</p>
+                    <br />
+                    <p><b>Description:</b> {description}</p>
+                    <br />
+                    <p><b>Location:</b> {location}</p>
+                    <br />
+                    <p><b>Will Deliver?</b> { willDeliver === true ? 'Yes' : 'No'}</p>
+                    <br />
+                    <p><b>Seller:</b> {author.username}</p>
+                    <br />
+                    <p id="created-at">Created At: {createdAt}</p>
+                    
                     {
                         // isAuthor === false? <button>VIEW</button> : 
                         // <div><button>EDIT</button><button>DELETE</button></div>

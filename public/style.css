@@ -1,20 +1,29 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+
 body {
-    background-color: rgb(230, 230, 230)
-    /* background-color: black; */
+    background-color: rgb(230, 230, 230);
 }
 
-/* #header {
-    background-color: black;
-    margin-top: -1.5em;
-    margin-bottom: 0em;
-}
+
+
 #navigation {
-    color: white;
+        padding: 20px;
 
-} */
+}
+
+
+#navigation a {
+    color: black;
+    font-style: italic;
+
+}
+
+
 
 .account-form-title {
     background-color: black;
@@ -32,7 +41,7 @@ body {
 
 .login-form {
     text-align: center;
-    height: 350px;
+    height: 300px;
     width: 500px;
     display: block;
     margin: auto;
@@ -44,10 +53,11 @@ body {
 .login-form button {
     font-size: 16px;
     padding: 10px;
-    /* background-color: black; */
+    background-color: rgb(56, 73, 170);
     border-radius: 2em;
     border: black 2px solid;
     width: 100px;
+    color: white;
 
 }
 
@@ -80,21 +90,142 @@ transition-duration: 0.4s;
 #register-or-login:hover {
 color: grey;
 font-style: italic;
-
 }
+
+
 /* LOGIN FORM ^ */
 
-/* .post {
+.post {
     background-color: white;
-    height: 400px;
-    /* width: 400px; */
-    /* grid
- 
-} */
+    height: 460px;
+    width: 375px;
+    margin: 10px;
+} 
 
-/* .post-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+.post-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 60px;
+    margin-top: 20px;
+    box-shadow: 8px 3px 3px 3px rgba(0, 0, 0, 0.089);
 
+
+}
+
+.profile-post {
+    background-color:red;
+    background-color: white;
+    height: 375px;
+    width: 375px;
+    margin: 10px;
+}
+
+.profile-post p {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+
+#post-title { 
+    background-color: rgb(116, 158, 221);
+    padding: 10px;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    border-bottom: 8px solid rgb(230, 230, 230);
+    color: white;
+}
+
+.post p {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+}
+
+#post-header {
+    text-align: center; 
+    background-color: rgb(230, 230, 230);
+    margin-top: 30px;
+    border-bottom: grey 1px solid;
+    padding: 10px;
+}
+
+
+#created-at{
+    font-size: .7em;
+    text-align: right;
+}
+
+
+#text {
+    overflow: scroll;
+}
+
+
+textarea {
+    width: 350px;
+    resize: none;
+    height: 30px;
+}
+
+#send-message-form {
+    padding-left: 14px;
+    margin-top: 10px;
+}
+
+#send-message-button {
+    font-size: 10px;
+    padding: 5px;
+    border: none;
+    color: rgb(56, 73, 170);
+    background-color: white;
+    padding-left: 270px;
+
+    
+}
+
+#send-message-button:hover {
+color: grey;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+#delete-button {
+    font-size: 10px;
+    padding: 5px;
+    border: none;
+    color: rgb(56, 73, 170);
+    background-color: white;
+    padding-left: 305px;
+    cursor: pointer;
+}
+
+
+#add-post {
+    border: none;
+    color: rgb(56, 73, 170);
+    cursor: pointer;
+    margin-left: 30px;
+    text-decoration: none;
+    
+}
+
+#add-post:hover{
+    color: grey;
+transition-duration: 0.4s;
+}
+
+/*POSTS*/
+
+
+
+
+/* .messages-to-me {
+    background-color: grey;
+}
+
+.messages-from-me {
+background-color: red;
 } */

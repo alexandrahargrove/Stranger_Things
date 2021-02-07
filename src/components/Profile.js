@@ -1,48 +1,55 @@
 import React, {useState, useEffect} from 'react';
+import MessagesForProfile from './MessagesForProfile'
+import DeletePost from './DeletePost'
 
 
 
-const Profile = ({token, setUser}) => {
-    const [listOfPosts, setPosts] = useState([])
-    useEffect (async () => {
+const Profile = ({token, setUser, user}) => {
+    const [listOfPosts, setPosts] = useState(user.posts ? user.posts : [])
 
-         const reponse = await fetch('https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/me', {
-             method: 'GET',
-             headers: {
-            'Content-Type':'application/json',
-            'Authorization': `Bearer ${token}`
-             }
-         })
-        const data = await reponse.json()
-        console.log(data.data.posts)
-        setPosts(data.data.posts);
-        setUser(data.data.posts);
-    }, [])
+
+    const fetchUserPosts = async () => {
+        const reponse = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/me`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        });
+        const {data} = await reponse.json();
+        setUser(data);
+        setPosts(data.posts)
+    }
+
 
     return (<>
-        <h1>Posts By Me:</h1>
+        <h1>My Posts:</h1>
     
         {
             listOfPosts.map((post, index) => {
-                console.log(post)
-                const {title, price, location, description, createdAt, author, isAuthor} = post;
-                return (
-                    <div key={index} className='post'>
-                        <h3>Title: {title}</h3>
-                        <p>Price: {price}</p>
-                        <p>Location: {location}</p>
-                        <p>Description: {description}</p>
-                        <p>Created At: {createdAt}</p>
+                const {title, price, location, description, createdAt, author, isAuthor, _id, active} = post;
+console.log(active)
+               return active ? (
+                    <div key={index} className='post-container'>
+                        <div className="profile-post">
+                        <h3 id='post-title'>{title}</h3>
+                        <p><b>Price:</b> {price}</p>
+                        <br />
+                        <p><b>Location:</b> {location}</p>
+                        <br />
+                        <p><b>Description:</b> {description}</p>
+                        <br />
+                        <p id="created-at"><b>Created At:</b> {createdAt}</p>
                         {
     
-                            isAuthor === true ? <div><button>EDIT</button><button>DELETE</button></div> : ''
+                            <DeletePost id={_id} token={token} fetchPosts={fetchUserPosts}/>
                         }
-    
     </div>
-                )
+    </div>
+                ) : null;
             })
         }
-    
+            <h1>Messages:</h1>
+            <MessagesForProfile user={user} token={token}/> 
         </>)
     
     

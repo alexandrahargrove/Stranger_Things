@@ -45,9 +45,8 @@ const Accountform = ({type, setToken, setUser}) => {
         setUsername('');
         setPassword('');
         history.push('/profile')
-    }
-    // setUsername('');
-    // setPassword('');
+    } 
+
     }
 
 

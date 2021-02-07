@@ -13,7 +13,7 @@ const handleDelete = async () => {
     fetchPosts()
 }
 
-return <button onClick={handleDelete}>DELETE</button>
+return <button id="delete-button" onClick={handleDelete}>DELETE</button>
 }
 
 
