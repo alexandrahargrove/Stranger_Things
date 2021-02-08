@@ -4,6 +4,20 @@
     padding: 0;
 }
 
+#logo {
+    width: 350px;
+}
+
+#links {
+    float: right;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    font-size: 1.3em;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 
 body {
     background-color: rgb(230, 230, 230);
@@ -13,51 +27,73 @@ body {
 
 #navigation {
         padding: 20px;
+        background-color: #426495;
+        border-bottom: 7px solid #C49205;
 
 }
 
 
 #navigation a {
-    color: black;
-    font-style: italic;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    text-decoration: none;
+
 
 }
 
+#navigation a:hover {
+    color: black;
+}
+
+
+#logged-in-as {
+    float: right;
+    font-family: 'Barlow', sans-serif;
+    text-transform: uppercase;
+    padding: 8px;
+    color: white;
+    font-size: .4em;
+    bottom: 40px;
+}
 
 
 .account-form-title {
-    background-color: black;
+    background-color: #426495;
     text-align: left;
-    height: 40px;
+    height: 60px;
     color: white;
     padding: 10px;
     display: flex;
     align-items: center;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;;
+    border-top-right-radius: 10px;
+    font-family: 'Barlow', sans-serif;
 
     
 }
 
 .login-form {
     text-align: center;
-    height: 300px;
+    height: 370px;
     width: 500px;
     display: block;
     margin: auto;
     background-color: white;
     border-radius: 20px;
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .login-form button {
     font-size: 16px;
     padding: 10px;
-    background-color: rgb(56, 73, 170);
+    background-color: #426495;
     border-radius: 2em;
     border: black 2px solid;
     width: 100px;
     color: white;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
 
 }
 
@@ -75,16 +111,25 @@ transition-duration: 0.4s;
     border-bottom: 1px solid black;
     font-size: 1.1rem;
     padding: 5px;
+    padding-top: 30px;
+    outline: none;
 }
 
 
 .login-form input::placeholder{
     color: rgba(128, 128, 128, 0.226);
+    font-family: 'Barlow', sans-serif;
 }
 
+
+
 #register-or-login {
-    color: black;
     font-style: bold;
+    padding: 5px;
+    border: none;
+    color: rgb(56, 73, 170);
+    background-color: white;
+    font-family: 'Barlow', sans-serif;
 }
 
 #register-or-login:hover {
@@ -113,7 +158,6 @@ font-style: italic;
 }
 
 .profile-post {
-    background-color:red;
     background-color: white;
     height: 375px;
     width: 375px;
@@ -148,8 +192,9 @@ font-style: italic;
     text-align: center; 
     background-color: rgb(230, 230, 230);
     margin-top: 30px;
-    border-bottom: grey 1px solid;
     padding: 10px;
+    font-family: 'Barlow', sans-serif;
+    
 }
 
 
@@ -168,6 +213,7 @@ textarea {
     width: 350px;
     resize: none;
     height: 30px;
+    font-family: 'Barlow', sans-serif;
 }
 
 #send-message-form {
@@ -182,6 +228,7 @@ textarea {
     color: rgb(56, 73, 170);
     background-color: white;
     padding-left: 270px;
+    outline: none;
 
     
 }
@@ -200,6 +247,7 @@ cursor: pointer;
     background-color: white;
     padding-left: 305px;
     cursor: pointer;
+    outline: none;
 }
 
 
@@ -209,6 +257,7 @@ cursor: pointer;
     cursor: pointer;
     margin-left: 30px;
     text-decoration: none;
+    font-family: 'Barlow', sans-serif;
     
 }
 
@@ -220,12 +269,239 @@ transition-duration: 0.4s;
 /*POSTS*/
 
 
+#create-post {
+    background-color: white;
+    width: 700px;
+    margin: auto;
+  width: 50%;
+  margin-top: 50px;
+  box-shadow: 8px 3px 3px 3px rgba(0, 0, 0, 0.089);
+border-radius: 10px;
 
 
-/* .messages-to-me {
-    background-color: grey;
 }
 
-.messages-from-me {
-background-color: red;
-} */
+#add-post-form {
+    font-family: 'Barlow', sans-serif;
+    outline: none;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+#create-post-title {
+    background-color: #749FDD;
+    padding: 15px;
+    color: white;
+    border-bottom: solid 8px rgb(230, 230, 230);
+
+}
+
+
+#add-post-form textarea{
+    font-size: 20px;
+    border: 1px black solid;
+    padding-left: 3px;
+    margin-top: 50px;
+    border-radius: 5px;
+
+}
+
+#add-post-form textarea::placeholder {
+    color: rgba(128, 128, 128, 0.322);
+    font-size: 14px;
+}
+
+
+#description {
+    height: 80px;
+}
+
+#location {
+    width: 200px;
+    margin-left: 10px;
+    
+
+}
+
+#price {
+    width: 75px;
+}
+
+#create-post-button {
+    font-size: 15px;
+    padding: 15px;
+    border: none;
+    color: rgb(56, 73, 170);
+    background-color: white;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+#create-post-button:hover{
+    color: grey;
+transition-duration: 0.4s;
+}
+
+#checkbox {
+    font-family: 'Barlow', sans-serif;
+    margin: 4px;
+
+}
+
+
+#my-posts-title {
+    padding: 15px;
+    padding-top: 25px;
+    border-bottom: solid 8px rgb(230, 230, 230);
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+#my-messages-title {
+    padding: 15px;
+    margin-top: 20px;
+    border-bottom: solid 8px rgb(230, 230, 230);
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* CREATE POST FORM */ 
+
+
+
+
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    font-family: 'Barlow', sans-serif;    
+    font-size: 10px;  
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+      }
+
+
+
+
+      #welcome {
+        background-color: #749FDD;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        border-bottom: solid 8px rgb(230, 230, 230);
+        font-family: 'Barlow', sans-serif;
+      }
+
+
+      #slogan {
+          font-size: 30px;
+          font-family: 'Barlow', sans-serif;
+          text-align: center;
+          margin: 50px;
+      }
+
+      #legal-disclaimer {
+          text-align: center;
+          width: 600px;
+          display: block;
+          margin: auto;
+          font-size: 20px;
+          font-family: 'Barlow', sans-serif;
+
+      }
+
+      #if-you-accept {
+          color: red;
+          font-family: 'Barlow', sans-serif;
+          margin: 25px;
+          font-size: 40px;
+          text-align: center;
+      }
+
+      #i-accept {
+          font-size: 40px;
+          margin: auto;
+          display: block;
+          text-align: center;
+          color: #C49205;
+
+      }
+
+      #i-accept:hover {
+        color: black;
+      }
+
+
+      #home {
+          margin-top: 60px;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#message-container h3 {
+    text-transform: uppercase;
+    padding-left: 2px;
+    color: grey;
+}
+
+ .messages-to-me {
+    font-family: 'Barlow', sans-serif;
+    background-color: white;
+    border: 1px black solid;
+
+    
+    }
+    
+    .messages-from-me {
+        font-family: 'Barlow', sans-serif;
+        text-align: right;
+        background-color: #749FDD;
+        color: white;
+    
+    }  
+
+
+    .messages-to-me p{
+        font-family: 'Barlow', sans-serif;
+        padding: 5px;
+    
+        
+        }
+        
+        .messages-from-me p{
+            padding: 5px;
+        
+        }  
+
+    .inbox {
+        background-color: #749FDD;
+        padding: 10px;
+        font-family: 'Barlow', sans-serif;
+        color: white;
+    }

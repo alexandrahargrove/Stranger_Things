@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {useReducer, useState} from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 
 
@@ -11,7 +11,8 @@ import {
     GetPosts,
     CreatePostForm,
     Profile,
-    MessagesForProfile
+    MessagesForProfile,
+    Home
   } from './components';
 
 
@@ -24,8 +25,10 @@ return <>
 
 <header>
 <nav id="navigation">
-<h1>Strangers Things</h1>
-    <Link to="/">Home</Link> <Link to="/posts"> Posts</Link> {
+<img id="logo" src="/strangers-things-logo.png"></img>
+    <div id="links">
+        <Link to="/home">Home</Link> 
+    <Link to="/posts"> Posts</Link> {
        token ?  <Link to="/profile"> Profile</Link> : ''
     } <Link onClick={() => {
        if (token) {
@@ -34,20 +37,22 @@ return <>
        }
     }} to="/login">{
     token ? 'Logout' : 'Login'}  
-    </Link>
+    </Link> 
+    <br />
+    {user.username && <div id="logged-in-as">Logged in as {user.username}</div> }
+    </div>
 </nav>
 </header>
 
-{user.username && <div>Logged in as {user.username}</div> }
+{/* {user.username && <div id="logged-in-as">Logged in as {user.username}</div> } */}
 
+<Route path="/home">
+    <Home />
+</Route>
 
-
-
-
-
-        {/* <Route path="/home">
-            <Home />
-        </Route> */}
+<Route exact path="/">
+    <Redirect to="/home" />
+</Route>
         <Route path="/login">
         <Accountform type={'login'} setToken={setToken} setUser={setUser}/>
         </Route>

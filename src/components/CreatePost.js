@@ -40,25 +40,24 @@ const CreatePostForm = ({token}) => {
     }
 
 
-return <>
-<form onSubmit={addPost}>
-    <h1>Create Post</h1>
-    <input type="text" value={title} onChange={(ev) => setTitle(ev.target.value)} placeholder="title" required></input>
+return <div id="create-post">
+<form id="add-post-form" onSubmit={addPost}>
+    <h1 id="create-post-title">Create Post</h1>
+    <textarea value={title} onChange={(ev) => setTitle(ev.target.value)} placeholder="title" required></textarea>
     <br />
-    <input type="text" value={description} onChange={(ev) => setDescription(ev.target.value)} placeholder="description" required></input>
+    <textarea id="description" value={description} onChange={(ev) => setDescription(ev.target.value)} placeholder="description" required></textarea>
     <br />
-    <input type="text" value={price} onChange={(ev) => setPrice(ev.target.value)} placeholder="price" required></input>
+    <textarea id="price" value={price} onChange={(ev) => setPrice(ev.target.value)} placeholder="price" required></textarea>
+    <textarea id="location" value={location} onChange={(ev) => setLocation(ev.target.value)} placeholder="location"></textarea>
     <br />
-    <input type="text" value={location} onChange={(ev) => setLocation(ev.target.value)} placeholder="location"></input>
-    <br />
-    Willing to deliver?
-    <input type="checkbox" value={willDeliver} onChange={(event) => {
-        setWillDeliver(event.target.value)
+    <span id="checkbox">Willing to deliver? </span>
+     <input type="checkbox" value={willDeliver} onChange={(event) => {
+        setWillDeliver(true)
     }}id="delivery"></input>
     <br />
-    <button type="submit">Create Post</button>
+    <button id="create-post-button" type="submit">Create Post</button>
 </form>
-</>
+</div>
 }
 
 

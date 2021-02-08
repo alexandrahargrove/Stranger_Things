@@ -20,9 +20,13 @@ const Profile = ({token, setUser, user}) => {
         setPosts(data.posts)
     }
 
+    // useEffect(() => {
+    //     fetchUserPosts()
+    // }, [token]);
+
 
     return (<>
-        <h1>My Posts:</h1>
+        <h1 id="my-posts-title">My Posts:</h1>
     
         {
             listOfPosts.map((post, index) => {
@@ -48,7 +52,7 @@ console.log(active)
                 ) : null;
             })
         }
-            <h1>Messages:</h1>
+            <h1 id="my-messages-title">Messages:</h1>
             <MessagesForProfile user={user} token={token}/> 
         </>)
     
