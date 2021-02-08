@@ -20,9 +20,9 @@ const Profile = ({token, setUser, user}) => {
         setPosts(data.posts)
     }
 
-    // useEffect(() => {
-    //     fetchUserPosts()
-    // }, [token]);
+    useEffect(() => {
+        fetchUserPosts()
+    }, [token]);
 
 
     return (<>
