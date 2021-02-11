@@ -11,8 +11,6 @@ const CreatePostForm = ({token}) => {
 
     const addPost = async (event) => {
         event.preventDefault();
-        console.log(title, description)
-        console.log('clicked add post')
         const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/posts`, {
             method: "POST",
             headers: {
@@ -30,7 +28,6 @@ const CreatePostForm = ({token}) => {
                 })
         });
         const data = await response.json();
-        console.log(data)
 
         setTitle('');
         setDescription('');

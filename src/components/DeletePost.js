@@ -9,7 +9,6 @@ const handleDelete = async () => {
             'Authorization': `Bearer ${token}`,
         }
     })
-    console.log(response)
     fetchPosts()
 }
 

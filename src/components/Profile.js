@@ -31,7 +31,6 @@ const Profile = ({token, setUser, user}) => {
         {
             listOfPosts.map((post, index) => {
                 const {title, price, location, description, createdAt, author, isAuthor, _id, active} = post;
-console.log(active)
                return active ? (
                     <div key={index} className='post-container'>
                         <div className="profile-post">

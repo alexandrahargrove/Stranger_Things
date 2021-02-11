@@ -12,7 +12,6 @@ const Accountform = ({type, setToken, setUser}) => {
     const history = useHistory();
 
     const submitClick = async (event) => {
-        console.log('clicked')
         event.preventDefault();
         const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/${type}`, {
         method: 'POST',
@@ -29,7 +28,6 @@ const Accountform = ({type, setToken, setUser}) => {
     
     ;
     const {data} = await response.json(); 
-    console.log({data})
     const token = data?.token;
     if (token) {
         setToken(token);
@@ -40,7 +38,6 @@ const Accountform = ({type, setToken, setUser}) => {
             },
         });
         const {data} = await reponse.json();
-        console.log(data);
         setUser(data);
         setUsername('');
         setPassword('');

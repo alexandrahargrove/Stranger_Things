@@ -20,7 +20,6 @@ const reponse = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU
     });
 
 const {data} = await reponse.json();
-console.log(data)
 setMessage('');
 }
 
@@ -36,9 +35,5 @@ return <>
 
 
 }
-
-
-
-
 
 export default MessageForm;

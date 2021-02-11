@@ -28,8 +28,6 @@ const GetPosts = ({token, setUser}) => {
     {
         listOfPosts.map(post => {
             const {title, price, location, description, createdAt, _id, author, isAuthor, willDeliver} = post;
-            console.log(post)
-            console.log(willDeliver);
             return (
                 <div key={_id} className='post-container'>
                     <div className='post'>
@@ -48,8 +46,6 @@ const GetPosts = ({token, setUser}) => {
                     <p id="created-at">Created At: {createdAt}</p>
                     
                     {
-                        // isAuthor === false? <button>VIEW</button> : 
-                        // <div><button>EDIT</button><button>DELETE</button></div>
 
                         isAuthor === true ? <DeletePost id={_id} token={token} fetchPosts={fetchPosts}/> : ''
                     }
